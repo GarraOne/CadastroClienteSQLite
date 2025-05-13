@@ -89,7 +89,7 @@ jobs:
         # Roda a aplicação a tela 1 do Xvfb
         DISPLAY: :1
       #run
-        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=GarraOne_CadastroClienteSQLite
+        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=GarraOne_CadastroClienteSQLite org.jacoco:jacoco-maven-plugin:prepare-agent -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml
     # Desliga o Xvfb
     - name: Desliga Xvfb
       run: killall Xvfb  
